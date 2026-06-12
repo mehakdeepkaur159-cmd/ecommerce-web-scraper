@@ -19,3 +19,21 @@ This project scrapes product data from an e-commerce website and exports structu
 Name | Price | Rating
 -----|-------|-------
 Book Name | 45.17 | 2
+
+## Screenshot
+
+Add your CSV screenshot here:
+
+```md
+![CSV Output](screenshots/csv-output.png)
+```
+
+
+
+## Author
+
+Mehakdeep Kaur
+
+M.Tech Integrated AI & Robotics
+
+Guru Nanak Dev University
