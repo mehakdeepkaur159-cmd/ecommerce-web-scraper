@@ -22,10 +22,9 @@ Book Name | 45.17 | 2
 
 ## Screenshot
 
-Add your CSV screenshot here:
 
 ```md
-![CSV Output](screenshots/csv-output.png)
+![CSV Output]"C:\Users\DELL\OneDrive\Desktop\python_scraper\screenshots\csv-output.png"
 ```
 
 
