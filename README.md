@@ -22,10 +22,8 @@ Book Name | 45.17 | 2
 
 ## Screenshot
 
+![CSV Output](screenshots/csv-output.png)
 
-```md
-![CSV Output]"C:\Users\DELL\OneDrive\Desktop\python_scraper\screenshots\csv-output.png"
-```
 
 
 
