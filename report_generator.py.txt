@@ -1,0 +1,49 @@
+import requests
+from bs4 import BeautifulSoup
+import pandas as pd
+
+print("Starting report generation...")
+
+url = "https://books.toscrape.com/"
+
+response = requests.get(url)
+soup = BeautifulSoup(response.text, "html.parser")
+
+books = soup.find_all("article", class_="product_pod")
+
+data = []
+
+for book in books:
+    title = book.h3.a["title"]
+    price = book.find("p", class_="price_color").text
+    price = float(price.replace("£", ""))
+
+    data.append({
+        "Title": title,
+        "Price": price
+    })
+
+df = pd.DataFrame(data)
+
+# Generate Summary
+total_books = len(df)
+average_price = df["Price"].mean()
+max_price = df["Price"].max()
+min_price = df["Price"].min()
+
+summary = {
+    "Total Books": total_books,
+    "Average Price": average_price,
+    "Highest Price": max_price,
+    "Lowest Price": min_price
+}
+
+# Save full dataset
+df.to_csv("report_data.csv", index=False)
+
+# Save summary
+summary_df = pd.DataFrame([summary])
+summary_df.to_csv("summary_report.csv", index=False)
+
+print("Report generated successfully.")
+print(summary)
